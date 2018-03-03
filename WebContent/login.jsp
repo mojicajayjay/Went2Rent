@@ -12,6 +12,7 @@
 <div class="header">
 		<h2>Login</h2>
 		<h5>${message}</h5>
+		<h5>${successMessage}</h5>
 	</div>
 	<form action="loginRegister" method="post">
 		<div class="input-group">
@@ -20,7 +21,7 @@
 		</div>
 		<div class="input-group">
 			<label>Password</label>
-			<input type="password" name="pword">
+			<input type="password" name="pword_1">
 		</div>
 		<div class="input-group">
 			<button type="submit" class="btn" name="login_btn" value="login">Login</button>

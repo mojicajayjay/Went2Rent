@@ -27,8 +27,8 @@ public class LoginRegister extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String userName = request.getParameter("username");
-		String password = request.getParameter("password");
+		String userName = request.getParameter("uname");
+		String password = request.getParameter("pword_1");
 		String submitType = request.getParameter("login_btn");
 		CustomerDAO cd = new CustomerDAOImpl();
 		Customer c = cd.getCustomer(userName, password);
@@ -38,8 +38,14 @@ public class LoginRegister extends HttpServlet {
 			request.getRequestDispatcher("welcome.jsp").forward(request, response);
 			
 		}else if(submitType.equals("register")) {
-			
-			
+			c.setUsername(userName);
+			c.setFirstName(request.getParameter("fname"));
+			c.setLastName(request.getParameter("lname"));
+			c.setPassword(password);
+			c.setEmail(request.getParameter("email"));
+			cd.insertCustomer(c);
+			request.setAttribute("successMessage", "Registration Done!");
+			request.getRequestDispatcher("login.jsp").forward(request,response);
 		}else {
 			request.setAttribute("message","Data not found ,  click on register");
 			request.getRequestDispatcher("login.jsp").forward(request,response);
