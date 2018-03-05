@@ -14,7 +14,7 @@
 			<a href="index.jsp" class="navbar-brand">PahiramKotse</a>
 		</div>
 		<ul class="nav navbar-nav">
-			<li><a href="aboutus.jsp">About us</a></li>
+			<li><a href="about.jsp">About us</a></li>
 			<li><a href="#">Contact</a></li>
 		</ul>
 		</div>

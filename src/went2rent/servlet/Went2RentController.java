@@ -14,13 +14,15 @@ import went2rent.actions.ActionHandler;
 class URL {
 	public final static String LOGIN = "/login";
 	public final static String ABOUT = "/about";
+	public final static String REPORT = "/report";
 }
 
 /**
  * Servlet implementation class Went2RentController
  */
 @WebServlet(urlPatterns = { URL.LOGIN,
-							URL.ABOUT} )
+							URL.ABOUT,
+							URL.REPORT} )
 
 public class Went2RentController extends HttpServlet {
 	private static final long serialVersionUID = 1L;

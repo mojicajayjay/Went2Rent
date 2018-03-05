@@ -201,7 +201,7 @@ public class UserService
 		
 		try {
 			trans.begin();
-			String query = "FROM users where " + COL_USERNAME + " = :username";;
+			String query = "FROM users where " + COL_USERNAME + " = :username";
 			TypedQuery<Users> q = em.createQuery(query, Users.class);
 			q.setParameter("username", username);
 			List <Users> users = q.getResultList();

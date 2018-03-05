@@ -16,7 +16,7 @@ public class LogInActionHandler implements ActionHandler {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String username = request.getParameter("username");
+		String username = request.getParameter("uname");
 		String password = request.getParameter("password");
 		Users user = UserService.findUser(username, password);
 		
