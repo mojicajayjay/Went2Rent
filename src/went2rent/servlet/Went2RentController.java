@@ -15,6 +15,7 @@ class URL {
 	public final static String LOGIN = "/login";
 	public final static String ABOUT = "/about";
 	public final static String REPORT = "/report";
+	public final static String ADDCAR = "/addcar";
 }
 
 /**
@@ -22,7 +23,8 @@ class URL {
  */
 @WebServlet(urlPatterns = { URL.LOGIN,
 							URL.ABOUT,
-							URL.REPORT} )
+							URL.REPORT,
+							URL.ADDCAR} )
 
 public class Went2RentController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
