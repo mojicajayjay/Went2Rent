@@ -10,7 +10,7 @@ import javax.persistence.Id;
 public class Users {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int userid;
+	private int id;
 	
 	@Column(nullable=false)
 	private String username;
@@ -23,6 +23,13 @@ public class Users {
 	
 	@Column(nullable=false)
 	private String password;
+	
+	@Column(nullable=false)
+	private String email;
+	
+	public Users () {
+		
+	}
 	
 	public String getFirstname() {
 		return firstname;
@@ -48,13 +55,6 @@ public class Users {
 		this.email = email;
 	}
 
-	@Column(nullable=false)
-	private String email;
-	
-	public Users () {
-		
-	}
-
 	public String getUsername() {
 		return username;
 	}
@@ -71,16 +71,21 @@ public class Users {
 		this.password = password;
 	}
 
-	public int getUserid() {
-		return userid;
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	@Override
 	public String toString() {
-		return "Users [userid=" + userid + ", username=" + username + ", firstname=" + firstname + ", lastname="
-				+ lastname + ", password=" + password + ", email=" + email + "]";
+		return "Users [id=" + id + ", username=" + username + ", firstname=" + firstname + ", lastname=" + lastname
+				+ ", password=" + password + ", email=" + email + "]";
 	}
 
+	
 	
 }
 

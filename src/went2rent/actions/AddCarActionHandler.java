@@ -19,7 +19,7 @@ public class AddCarActionHandler implements ActionHandler{
 		String car_platenumber = request.getParameter("car_platenumber");
 		String car_color = request.getParameter("car_color");
 		
-		Car c = null;
+		Car c = new Car();
 		
 		c.setCar_name(car_name);
 		c.setCar_color(car_color);

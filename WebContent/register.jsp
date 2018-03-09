@@ -22,7 +22,7 @@
 <div class="header">
 	<h2>Register</h2>
 </div>
-<form method="post" action="register.jsp">
+<form method="post" action="register">
 	<div class="input-group">
 		<label>First Name</label>
 		<input type="text" name="fname" value="">

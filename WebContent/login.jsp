@@ -22,7 +22,7 @@
 <div class="header">
 		<h2>Login</h2>
 	</div>
-	<form action="Login">
+	<form action="login">
 		<div class="input-group">
 			<label>Username</label>
 			<input type="text" name="uname">

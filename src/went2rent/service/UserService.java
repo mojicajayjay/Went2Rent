@@ -224,11 +224,20 @@ public class UserService
 	}
 	
 	public static void main (String[] args) {
+	
+		Users u = new Users();
+		u.setFirstname("jj");
+		u.setLastname("ww");
+		u.setUsername("jw");
+		u.setPassword("wow");
+		u.setEmail("lol@ph");
+		
+		UserService.addUser(u);
 		
 		List<Users> users = getAllUsers();
-		for(Users u: users)
+		for(Users ul: users)
 		{
-			System.out.println(u.toString());
+			System.out.println(ul.toString());
 		}
 	}
 }

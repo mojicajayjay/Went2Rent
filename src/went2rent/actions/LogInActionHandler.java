@@ -28,12 +28,14 @@ public class LogInActionHandler implements ActionHandler {
 			
 			String rm = request.getParameter("remember");
 			if(rm != null) {
-				Cookie usernameCookie = new Cookie("userID", String.valueOf(user.getUserid()));
+				Cookie usernameCookie = new Cookie("userID", String.valueOf(user.getId()));
 				usernameCookie.setMaxAge(60*60*24*21);
 				response.addCookie(usernameCookie);
 			}
 			
 		}
+		else
+			dispatcher = request.getRequestDispatcher("error.jsp");
 		
 		dispatcher.forward(request, response);
 	}

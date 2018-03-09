@@ -17,7 +17,7 @@ public class RegisterActionHandler implements ActionHandler{
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		String username = request.getParameter("uname");
 		String password1 = request.getParameter("pword_1");
-		String password2 = request.getParameter("pword_2");
+//		String password2 = request.getParameter("pword_2");
 		String email = request.getParameter("email");
 		String firstname = request.getParameter("fname");
 		String lastname = request.getParameter("lname");
@@ -25,7 +25,7 @@ public class RegisterActionHandler implements ActionHandler{
 		Users u = new Users();
 		
 		
-		if(password1==password2) {
+//		if(password1==password2) {
 			password = password1;
 			u.setUsername(username);
 			u.setPassword(password);
@@ -39,10 +39,10 @@ public class RegisterActionHandler implements ActionHandler{
 				dispatcher.forward(request, response);
 			} else 
 				request.getRequestDispatcher("index.jsp").forward(request, response);
-		}
-		else {
-			response.sendRedirect("index.jsp");
-		}
+//		}
+//		else {
+//			response.sendRedirect("xxx.jsp");
+//		}
 		
 		
 	}
