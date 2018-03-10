@@ -18,12 +18,18 @@ public class AddCarActionHandler implements ActionHandler{
 		String car_name = request.getParameter("car_name");
 		String car_platenumber = request.getParameter("car_platenumber");
 		String car_color = request.getParameter("car_color");
+		String path = request.getParameter("car_picture");
 		
 		Car c = new Car();
+		
+		if(path == null) {
+			path = "default.jpg";
+		}
 		
 		c.setCar_name(car_name);
 		c.setCar_color(car_color);
 		c.setCar_platenumber(car_platenumber);
+		c.setPath(path);
 		
 		if(!CarService.addCar(c)) {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("error.jsp");

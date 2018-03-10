@@ -18,6 +18,17 @@ public class Car {
 	@Column(nullable=true)
 	private String car_color;
 
+	@Column(nullable=true)
+	private String path;
+	
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
+	}
+
 	public Car() {
 		
 	}
@@ -53,9 +64,11 @@ public class Car {
 	public void setCar_color(String car_color) {
 		this.car_color = car_color;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Car [car_id=" +car_id+" car_name=" +car_name+" car_platenumber=" +car_platenumber+ " car_color=" +car_color+ "]";
+		return "Car [car_id=" + car_id + ", car_name=" + car_name + ", car_platenumber=" + car_platenumber
+				+ ", car_color=" + car_color + ", path=" + path + "]";
 	}
+
 }
