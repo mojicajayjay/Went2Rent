@@ -23,8 +23,8 @@ DROP TABLE IF EXISTS `admin`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `admin` (
-  `admin_id` int(11) NOT NULL AUTO_INCREMENT,
-  `admin_name` varchar(45) NOT NULL,
+  `admin_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   PRIMARY KEY (`admin_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -35,6 +35,7 @@ CREATE TABLE `admin` (
 
 LOCK TABLES `admin` WRITE;
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
+INSERT INTO `admin` VALUES (1,1);
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -50,9 +51,10 @@ CREATE TABLE `car` (
   `car_ name` varchar(45) NOT NULL,
   `car_platenumber` varchar(10) NOT NULL,
   `car_color` varchar(45) DEFAULT NULL,
+  `path` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`car_id`),
   UNIQUE KEY `car_id_UNIQUE` (`car_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -61,6 +63,7 @@ CREATE TABLE `car` (
 
 LOCK TABLES `car` WRITE;
 /*!40000 ALTER TABLE `car` DISABLE KEYS */;
+INSERT INTO `car` VALUES (1,'sample','abc123','red','default.jpg');
 /*!40000 ALTER TABLE `car` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -72,13 +75,13 @@ DROP TABLE IF EXISTS `car_reports`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `car_reports` (
-  `report_id` int(11) NOT NULL,
+  `report_id` int(11) NOT NULL AUTO_INCREMENT,
   `car_id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
   `date_report` datetime NOT NULL,
   `report` varchar(256) NOT NULL,
   PRIMARY KEY (`report_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -87,6 +90,7 @@ CREATE TABLE `car_reports` (
 
 LOCK TABLES `car_reports` WRITE;
 /*!40000 ALTER TABLE `car_reports` DISABLE KEYS */;
+INSERT INTO `car_reports` VALUES (1,1,1,'2018-03-10 00:00:00','car is scratched');
 /*!40000 ALTER TABLE `car_reports` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -98,11 +102,13 @@ DROP TABLE IF EXISTS `rating`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `rating` (
+  `rate_id` int(11) NOT NULL AUTO_INCREMENT,
   `car_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `rating` float DEFAULT NULL,
-  `comment` varchar(128) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `rating` float NOT NULL,
+  `comment` varchar(128) DEFAULT NULL,
+  PRIMARY KEY (`rate_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -111,6 +117,7 @@ CREATE TABLE `rating` (
 
 LOCK TABLES `rating` WRITE;
 /*!40000 ALTER TABLE `rating` DISABLE KEYS */;
+INSERT INTO `rating` VALUES (1,1,1,5,'Good');
 /*!40000 ALTER TABLE `rating` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -129,7 +136,7 @@ CREATE TABLE `transaction` (
   `date_end` datetime NOT NULL,
   `days_use` int(11) NOT NULL,
   PRIMARY KEY (`trans_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -138,6 +145,7 @@ CREATE TABLE `transaction` (
 
 LOCK TABLES `transaction` WRITE;
 /*!40000 ALTER TABLE `transaction` DISABLE KEYS */;
+INSERT INTO `transaction` VALUES (1,1,1,'2018-03-10 00:00:00','2018-03-10 00:00:00',1);
 /*!40000 ALTER TABLE `transaction` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -178,4 +186,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-09 22:09:00
+-- Dump completed on 2018-03-10 14:19:42
