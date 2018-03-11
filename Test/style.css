@@ -1,0 +1,11 @@
+.outer{
+  width: 100%;
+  height: 250px;
+}
+.inner{
+  width : 150px;
+  height : 150px;
+  background-color: crimson;
+  display: inline-block;
+  margin: 2px;
+}

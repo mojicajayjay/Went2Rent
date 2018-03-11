@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Went2Rent</title>
+<title>Cart</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
@@ -24,28 +24,14 @@
 		</ul>
 		</div>
 	</nav>
-
-	<div class="container">
-	<div class="jumbotron">
-		<h1>Need a car?</h1>
-		<p>Choose the right vehicle for you in an affordable price!</p>
-	</div>
-
-	<div id="product-container">
+	
+	<div id="product-container" class="container">
 	
 	</div>
-	</div>
 	
-<script type="text/javascript">
-
-$(document).ready(function(){
-	  $('#btn').click(function(e){
-	    var element = $("<div class='inner'> </div>");
-	    element.appendTo('.product-container');
-	  });
-});
-
-</script>
-
+	<script>
+	
+	function
+	</script>
 </body>
 </html>
