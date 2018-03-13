@@ -29,14 +29,14 @@
 		</div>
 		<div class="input-group">
 			<label>Password</label>
-			<input type="password" name="pword">
+			<input type="password" name="password">
 		</div>
 		<div class="input-group">
 			<button type="submit" class="btn" name="login_btn" value = "login">Login</button>
 		</div>
 		
 		<p>
-			Not yet a member? <a href="register.html">Sign up</a>
+			Not yet a member? <a href="register.jsp">Sign up</a>
 		</p>
 	</form>
 </body>

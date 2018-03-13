@@ -174,7 +174,10 @@ public class UserService
 			q.setParameter("username", username);
 			q.setParameter("password", password);
 			List <Users> users = q.getResultList();
-			
+						
+			System.out.println(users.get(0).getUsername());
+			System.out.println(users.get(0).getPassword());
+		
 			if(users != null && users.size() != 0) {
 				user = users.get(0);
 			}
@@ -188,6 +191,8 @@ public class UserService
 		} finally {
 			em.close();
 		}	
+		
+//		System.out.println(user.getUsername());
 		
 		return user;
 	}
@@ -224,7 +229,7 @@ public class UserService
 	}
 	
 	public static void main (String[] args) {
-	
+/*	
 		Users u = new Users();
 		u.setFirstname("jj");
 		u.setLastname("ww");
@@ -233,12 +238,14 @@ public class UserService
 		u.setEmail("lol@ph");
 		
 		UserService.addUser(u);
-		
+*/		
 		List<Users> users = getAllUsers();
 		for(Users ul: users)
 		{
 			System.out.println(ul.toString());
 		}
+		
+		findUser("ronsarahan","123");
 	}
 }
 

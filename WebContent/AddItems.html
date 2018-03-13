@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Items Dynamically</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="outer">
+	
+</div>
+<button type="button" id="btn">Submit</button>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+	  $('#btn').click(function(e){
+	    var element = $("<div class='inner'> </div>");
+	    element.appendTo('.outer');
+	  });
+});
+
+</script>
+</body>
+</html>
