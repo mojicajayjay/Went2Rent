@@ -19,6 +19,7 @@ public class CarService {
 	public static final String COL_CAR = "car_name";
 	public static final String COL_PLATE = "car_platenumber";
 	public static final String COL_COLOR = "car_color";
+	public static final String COL_PATH = "path";
 	
 	public static List<Car> getAllCars(){
 		List<Car> c = new ArrayList<Car>();

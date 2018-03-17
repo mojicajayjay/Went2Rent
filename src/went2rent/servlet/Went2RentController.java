@@ -18,6 +18,9 @@ class URL {
 	public final static String REPORT = "/report";
 	public final static String ADDCAR = "/addcar";
 	public final static String REGISTER = "/register";
+	public final static String LOGOUT = "/logout";
+	public final static String RESET = "/reset";
+	public final static String AUTH = "/auth";
 }
 
 /**
@@ -27,7 +30,10 @@ class URL {
 							URL.ABOUT,
 							URL.REPORT,
 							URL.ADDCAR,
-							URL.REGISTER} )
+							URL.REGISTER,
+							URL.LOGOUT,
+							URL.RESET,
+							URL.AUTH} )
 
 public class Went2RentController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -39,6 +45,9 @@ public class Went2RentController extends HttpServlet {
         
         actions.put(URL.LOGIN, new LogInActionHandler());
         actions.put(URL.REGISTER, new RegisterActionHandler());
+        actions.put(URL.LOGOUT, new LogOutActionHandler());
+        actions.put(URL.RESET, new ResetPasswordActionHandler());
+        actions.put(URL.AUTH, new ForgotPasswordActionHandler());
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -5,8 +5,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<title>Pahiram Kotse</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Register</title>
+	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body>
@@ -19,28 +19,31 @@
 			<li><a href="about.jsp">About us</a></li>
 			<li><a href="#">Contact</a></li>
 		</ul>
-		<ul class="nav navbar-nav navbar-right">
-		<c:choose>
-			<c:when test = "${empty sessionScope.sessionuser}" >
-				<li><a href="register.jsp">Sign up</a></li>
-				<li><a href="login.jsp">Login</a></li>
-			</c:when>
-			<c:otherwise>
-				<li><c:out value = '${sessionScope.sessionuser.username}'/></li>
-				<li><a href="logout">Logout</a></li>
-			</c:otherwise>
-		</c:choose>
-		</ul>
 		</div>
 	</nav>
-
-	<div class="container">
-	<div class="jumbotron">
-		<h1>PahiramKotse</h1>
-		<p>Choose the right vehicle for you in an affordable price!</p>
+<div class="header">
+	<h2>Register</h2>
+</div>
+<form method="post" action="reset">
+	<c:choose>
+		<c:when test = "${not empty sessionScope.sessionname}">
+			<input type="hidden" name = "username" value = <c:out value = '${sessionScope.sessionname.username}'/>>
+		</c:when>
+		<c:otherwise>
+			<li> No user in database! </li>
+		</c:otherwise>
+	</c:choose>
+	<div class="input-group">
+		<label>Password</label>
+		<input type="password" name="pword_1">
 	</div>
-
-	<p>*Products here</p>
+	<div class="input-group">
+		<label>Confirm password</label>
+		<input type="password" name="pword_2">
 	</div>
+	<div class="input-group">
+		<button type="submit" class="btn" name="register">Reset Password</button>
+	</div>
+</form>
 </body>
 </html>

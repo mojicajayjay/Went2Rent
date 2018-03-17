@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="true" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -20,27 +22,15 @@
 		</div>
 	</nav>
 <div class="header">
-		<h2>Login</h2>
-	</div>
-	<form action="login">
+		
+	<form action="auth">
 		<div class="input-group">
 			<label>Username</label>
 			<input type="text" name="uname">
 		</div>
 		<div class="input-group">
-			<label>Password</label>
-			<input type="password" name="password">
+			<button type="submit" class="btn" name="login_btn" value = "auth">Next</button>
 		</div>
-		<div class="input-group">
-			<button type="submit" class="btn" name="login_btn" value = "login">Login</button>
-		</div>
-		
-		<p>
-			Not yet a member? <a href="register.jsp">Sign up</a>
-		</p>
-		<p>
-			<a href = "forgotpw.jsp">Forgot your password?</a>
-		</p>
 	</form>
 </body>
 </html>

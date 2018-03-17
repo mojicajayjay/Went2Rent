@@ -41,11 +41,11 @@
 	</div>
 	<div class="input-group">
 		<label>Password</label>
-		<input type="password" name="pword_1">
+		<input type="password" name="pword_1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title = "Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required >
 	</div>
 	<div class="input-group">
 		<label>Confirm password</label>
-		<input type="password" name="pword_2">
+		<input type="password" name="pword_2" pattern = p-word1 title = "Must match input from above." required>
 	</div>
 	<div class="input-group">
 		<button type="submit" class="btn" name="register">Register</button>

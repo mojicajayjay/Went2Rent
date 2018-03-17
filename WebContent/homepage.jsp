@@ -12,14 +12,14 @@
 	<nav class="navbar navbar-default">
 		<div class="container">
 		<div class="navbar-header">
-			<a href="index.html" class="navbar-brand">WENT2RENT</a>
+			<a href="index.jsp" class="navbar-brand">WENT2RENT</a>
 		</div>
 		<ul class="nav navbar-nav">
-			<li><a href="aboutus.html">About us</a></li>
+			<li><a href="about.jsp">About us</a></li>
 			<li><a href="#">Contact</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
-			<li><a href="register.html">Sign up</a></li>
+			<li><a href="register.jsp">Sign up</a></li>
 			<li><a href="login.jsp">Login</a></li>
 		</ul>
 		</div>
@@ -31,21 +31,7 @@
 		<p>Choose the right vehicle for you in an affordable price!</p>
 	</div>
 
-	<div id="product-container">
-	
+	<p>*Products here</p>
 	</div>
-	</div>
-	
-<script type="text/javascript">
-
-$(document).ready(function(){
-	  $('#btn').click(function(e){
-	    var element = $("<div class='inner'> </div>");
-	    element.appendTo('.product-container');
-	  });
-});
-
-</script>
-
 </body>
 </html>
