@@ -24,7 +24,11 @@ public class LogInActionHandler implements ActionHandler {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
 		
 		if(user != null) {
+<<<<<<< HEAD
 			dispatcher = request.getRequestDispatcher("index.jsp");
+=======
+			dispatcher = request.getRequestDispatcher("welcome.jsp");
+>>>>>>> e6bfa1e4c96307a60685b93b4af77c7e1881994f
 			HttpSession session = request.getSession();
 			session.setAttribute("sessionuser", user);
 			

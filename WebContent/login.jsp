@@ -37,9 +37,12 @@
 		
 		<p>
 			Not yet a member? <a href="register.jsp">Sign up</a>
+<<<<<<< HEAD
 		</p>
 		<p>
 			<a href = "forgotpw.jsp">Forgot your password?</a>
+=======
+>>>>>>> e6bfa1e4c96307a60685b93b4af77c7e1881994f
 		</p>
 	</form>
 </body>
