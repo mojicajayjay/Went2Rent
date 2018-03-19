@@ -239,7 +239,7 @@ public class UserService
 		
 		UserService.addUser(u);
 */		
-<<<<<<< HEAD
+
 //		List<Users> users = getAllUsers();
 /*		for(Users ul: users)
 =======
@@ -253,8 +253,6 @@ public class UserService
 		findUser("ronsarahan","123");
 <<<<<<< HEAD
 */	
-=======
->>>>>>> e6bfa1e4c96307a60685b93b4af77c7e1881994f
 	}
 }
 

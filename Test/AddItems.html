@@ -12,17 +12,32 @@
 <div class="outer">
 	
 </div>
-<button type="button" id="btn">Submit</button>
+<button type="button" id="button1">Submit</button>
 
+<div id="openModal" class="modalDialog" style="visibility: hidden;">
+    <form method="post" action="additem">
+    	<label>Product Name:</label>
+    	<input type="text" name="product_name">
+
+    	<label>Description:</label>
+    	<input type="text" name="desc">
+
+    	<input type="submit" name="submit" id="submit">
+    </form>
 <script type="text/javascript">
 
 $(document).ready(function(){
-	  $('#btn').click(function(e){
+	  $('#submit').click(function(e){
 	    var element = $("<div class='inner'> </div>");
 	    element.appendTo('.outer');
 	  });
 });
 
+$(document).ready(function(){
+	$('#button1').on('click', function() {
+    $('#openModal').show();
+});
+});
 </script>
 </body>
 </html>
