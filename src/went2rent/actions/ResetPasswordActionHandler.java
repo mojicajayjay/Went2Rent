@@ -17,7 +17,7 @@ public class ResetPasswordActionHandler implements ActionHandler{
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String password = request.getParameter("pword_1");
-		RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("cata");
 		
 		HttpSession session = request.getSession();	
 		String username = request.getParameter("username");;

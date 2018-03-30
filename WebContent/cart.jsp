@@ -12,7 +12,7 @@
 	<nav class="navbar navbar-default">
 		<div class="container">
 		<div class="navbar-header">
-			<a href="index.jsp" class="navbar-brand">WENT2RENT</a>
+			<a href="cata" class="navbar-brand">WENT2RENT</a>
 		</div>
 		<ul class="nav navbar-nav">
 			<li><a href="about.jsp">About us</a></li>

@@ -11,7 +11,7 @@
 	<nav class="navbar navbar-default">
 		<div class="container">
 		<div class="navbar-header">
-			<a href="index.jsp" class="navbar-brand">PahiramKotse</a>
+			<a href="cata" class="navbar-brand">PahiramKotse</a>
 		</div>
 		<ul class="nav navbar-nav">
 			<li><a href="about.jsp">About us</a></li>
@@ -25,15 +25,15 @@
 <form method="post" action="register">
 	<div class="input-group">
 		<label>First Name</label>
-		<input type="text" name="fname" value="">
+		<input type="text" name="fname" value=""  required>
 	</div>
 	<div class="input-group">
 		<label>Last Name</label>
-		<input type="text" name="lname" value="">
+		<input type="text" name="lname" value=""  required>
 	</div>
 	<div class="input-group">
 		<label>Username</label>
-		<input type="text" name="uname" value="">
+		<input type="text" name="uname" value="" required>
 	</div>
 	<div class="input-group">
 		<label>Email</label>
@@ -45,7 +45,7 @@
 	</div>
 	<div class="input-group">
 		<label>Confirm password</label>
-		<input type="password" name="pword_2" pattern = p-word1 title = "Must match input from above." required>
+		<input type="password" name="pword_2"  required>
 	</div>
 	<div class="input-group">
 		<button type="submit" class="btn" name="register">Register</button>

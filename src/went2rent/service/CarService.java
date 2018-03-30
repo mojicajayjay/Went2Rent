@@ -11,7 +11,7 @@ import javax.persistence.TypedQuery;
 
 
 import went2rent.beans.Car;
-import went2rent.beans.Users;
+
 
 public class CarService {
 	public static final String TABLE = "car";
@@ -22,7 +22,7 @@ public class CarService {
 	public static final String COL_PATH = "path";
 	
 	public static List<Car> getAllCars(){
-		List<Car> c = new ArrayList<Car>();
+		List<Car> car = new ArrayList<Car>();
 		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysqldb");
 		EntityManager em = emf.createEntityManager();
@@ -31,19 +31,18 @@ public class CarService {
 		
 		try {
 			trans.begin();
-			TypedQuery<Car> car = em.createQuery("FROM car", Car.class);
-			c = car.getResultList();
+			TypedQuery<Car> c = em.createQuery("FROM car", Car.class);
+			car = c.getResultList();
 			
 			trans.commit();
 		}catch(Exception e) {
-			if(trans==null)
-				trans.rollback();
+			trans.rollback();
 			e.printStackTrace();
 		}finally {
 			em.close();
 		}
 		
-		return c;
+		return car;
 	}
 	
 	public static Car getCar(int id) {
@@ -60,8 +59,7 @@ public class CarService {
 			
 			trans.commit();
 		}catch(Exception e) {
-			if(trans == null) 
-				trans.rollback();
+			trans.rollback();
 			e.printStackTrace();
 		}finally {
 			em.close();
@@ -84,8 +82,7 @@ public class CarService {
 			trans.commit();
 			added = true;
 		}catch(Exception e) {
-			if(trans == null)
-				trans.rollback();
+			trans.rollback();
 			e.printStackTrace();
 		}finally {
 			em.close();
@@ -111,8 +108,7 @@ public class CarService {
 			trans.commit();
 			edited = true;
 		}catch(Exception e) {
-			if(trans == null)
-				trans.rollback();
+			trans.rollback();
 			e.printStackTrace();
 		}finally {
 			em.close();
@@ -137,8 +133,7 @@ public class CarService {
 			trans.commit();
 			deleted = true;
 		}catch(Exception e) {
-			if(trans==null) 
-				trans.rollback();
+			trans.rollback();
 			e.printStackTrace();
 		}finally {
 			em.close();
@@ -164,8 +159,7 @@ public class CarService {
 			cars = c.getResultList();
 			trans.commit();
 		}catch(Exception e) {
-			if(trans==null) 
-				trans.rollback();
+			trans.rollback();
 			e.printStackTrace();
 		}finally {
 			em.close();
@@ -191,8 +185,7 @@ public class CarService {
 			cars = c.getResultList();
 			trans.commit();
 		}catch(Exception e) {
-			if(trans==null) 
-				trans.rollback();
+			trans.rollback();
 			e.printStackTrace();
 		}finally {
 			em.close();
@@ -200,5 +193,10 @@ public class CarService {
 		
 		return cars;
 
+	}
+	
+	public static void main(String[] args) {
+		List<Car> c = getAllCars();
+		System.out.println(c);
 	}
 }

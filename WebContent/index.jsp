@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ page session="true" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -13,7 +14,7 @@
 	<nav class="navbar navbar-default">
 		<div class="container">
 		<div class="navbar-header">
-			<a href="index.jsp" class="navbar-brand">PahiramKotse</a>
+			<a href="cata" class="navbar-brand">PahiramKotse</a>
 		</div>
 		<ul class="nav navbar-nav">
 			<li><a href="about.jsp">About us</a></li>
@@ -27,6 +28,14 @@
 			</c:when>
 			<c:otherwise>
 				<li><c:out value = '${sessionScope.sessionuser.username}'/></li>
+				<c:choose>
+					<c:when test = "${not empty sessionScope.admin}">
+						<li><a href="admin.jsp">Admin mode</a></li>
+					</c:when>
+					<c:otherwise>
+						
+					</c:otherwise>
+				</c:choose>
 				<li><a href="logout">Logout</a></li>
 			</c:otherwise>
 		</c:choose>
@@ -39,8 +48,14 @@
 		<h1>PahiramKotse</h1>
 		<p>Choose the right vehicle for you in an affordable price!</p>
 	</div>
-
-	<p>*Products here</p>
+		<div class="minitron" id="catalogue">
+			<c:forEach items="${sessionScope.products}" var="product">
+				<c:out value="${product.car_name}"/>
+				<c:out value="${product.car_platenumber}"/>
+				<c:out value="${product.car_color}"/>
+				<img src="<c:out value="${product.path}"/>"/>
+			</c:forEach>
+		</div>
 	</div>
 </body>
 </html>

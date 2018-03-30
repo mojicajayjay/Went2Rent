@@ -11,10 +11,10 @@
 	<nav class="navbar navbar-default">
 		<div class="container">
 		<div class="navbar-header">
-			<a href="index.html" class="navbar-brand">PahiramKotse</a>
+			<a href="cata" class="navbar-brand">PahiramKotse</a>
 		</div>
 		<ul class="nav navbar-nav">
-			<li><a href="aboutus.html">About us</a></li>
+			<li><a href="about.jsp">About us</a></li>
 			<li><a href="#">Contact</a></li>
 		</ul>
 		</div>
@@ -22,7 +22,7 @@
 <div class="header">
 		<h2>Login</h2>
 	</div>
-	<form action="login">
+	<form action="login" method = "POST">
 		<div class="input-group">
 			<label>Username</label>
 			<input type="text" name="uname">
@@ -32,17 +32,15 @@
 			<input type="password" name="password">
 		</div>
 		<div class="input-group">
-			<button type="submit" class="btn" name="login_btn" value = "login">Login</button>
+			<button type="submit" class="btn" name="login_btn" value = "login" >Login</button>
 		</div>
 		
 		<p>
 			Not yet a member? <a href="register.jsp">Sign up</a>
-<<<<<<< HEAD
 		</p>
 		<p>
 			<a href = "forgotpw.jsp">Forgot your password?</a>
-=======
->>>>>>> e6bfa1e4c96307a60685b93b4af77c7e1881994f
+
 		</p>
 	</form>
 </body>

@@ -18,15 +18,23 @@ public class LogInActionHandler implements ActionHandler {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("uname");
 		String password = request.getParameter("password");
-		System.out.println(username);
+//		System.out.println(username);
 		Users user = UserService.findUser(username, password);
+//		System.out.println(user.getAdmin());
 //		System.out.println(user.getUsername());
-		RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("cata");
 		
 		if(user != null) {
-
-			dispatcher = request.getRequestDispatcher("index.jsp");
 			HttpSession session = request.getSession();
+			if(user.getAdmin()==1) {
+				System.out.println("Setting true params");
+				session.setAttribute("admin", "tru");
+			}
+			else {
+				System.out.println("Setting empty params");
+				session.removeAttribute("admin");
+			}
+			dispatcher = request.getRequestDispatcher("cata");
 			session.setAttribute("sessionuser", user);
 			
 			String rm = request.getParameter("remember");
@@ -37,7 +45,9 @@ public class LogInActionHandler implements ActionHandler {
 			}
 			
 		}
-		
+		else {
+			dispatcher = request.getRequestDispatcher("login.jsp");
+		}
 		dispatcher.forward(request, response);
 	}
 

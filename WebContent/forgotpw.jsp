@@ -13,10 +13,10 @@
 	<nav class="navbar navbar-default">
 		<div class="container">
 		<div class="navbar-header">
-			<a href="index.html" class="navbar-brand">PahiramKotse</a>
+			<a href="cata" class="navbar-brand">PahiramKotse</a>
 		</div>
 		<ul class="nav navbar-nav">
-			<li><a href="aboutus.html">About us</a></li>
+			<li><a href="about.jsp">About us</a></li>
 			<li><a href="#">Contact</a></li>
 		</ul>
 		</div>

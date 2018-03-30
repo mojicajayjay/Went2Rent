@@ -1,12 +1,16 @@
 package went2rent.beans;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Entity(name="car")
 public class Car {
 
 	@Id
-	@Column(nullable=false)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int car_id;
 	
 	@Column(nullable=false)
@@ -20,6 +24,10 @@ public class Car {
 
 	@Column(nullable=true)
 	private String path;
+
+	public Car() {
+		
+	}
 	
 	public String getPath() {
 		return path;
@@ -27,10 +35,6 @@ public class Car {
 
 	public void setPath(String path) {
 		this.path = path;
-	}
-
-	public Car() {
-		
 	}
 	
 	public int getCar_id() {

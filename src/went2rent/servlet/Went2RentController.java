@@ -21,6 +21,7 @@ class URL {
 	public final static String LOGOUT = "/logout";
 	public final static String RESET = "/reset";
 	public final static String AUTH = "/auth";
+	public final static String CATA = "/cata";
 }
 
 /**
@@ -33,7 +34,8 @@ class URL {
 							URL.REGISTER,
 							URL.LOGOUT,
 							URL.RESET,
-							URL.AUTH} )
+							URL.AUTH,
+							URL.CATA} )
 
 public class Went2RentController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -48,6 +50,7 @@ public class Went2RentController extends HttpServlet {
         actions.put(URL.LOGOUT, new LogOutActionHandler());
         actions.put(URL.RESET, new ResetPasswordActionHandler());
         actions.put(URL.AUTH, new ForgotPasswordActionHandler());
+        actions.put(URL.CATA, new CatalogueActionHandler());
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

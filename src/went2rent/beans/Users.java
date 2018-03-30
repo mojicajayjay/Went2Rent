@@ -27,10 +27,21 @@ public class Users {
 	@Column(nullable=false)
 	private String email;
 	
+	@Column(nullable=true)
+	private int admin;
+	
 	public Users () {
 		
 	}
-	
+		
+	public int getAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(int admin) {
+		this.admin = admin;
+	}
+
 	public String getFirstname() {
 		return firstname;
 	}
@@ -82,9 +93,8 @@ public class Users {
 	@Override
 	public String toString() {
 		return "Users [id=" + id + ", username=" + username + ", firstname=" + firstname + ", lastname=" + lastname
-				+ ", password=" + password + ", email=" + email + "]";
+				+ ", password=" + password + ", email=" + email + ", admin=" + admin + "]";
 	}
-
 	
 	
 }

@@ -16,30 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `admin`
---
-
-DROP TABLE IF EXISTS `admin`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `admin` (
-  `admin_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  PRIMARY KEY (`admin_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `admin`
---
-
-LOCK TABLES `admin` WRITE;
-/*!40000 ALTER TABLE `admin` DISABLE KEYS */;
-INSERT INTO `admin` VALUES (1,1);
-/*!40000 ALTER TABLE `admin` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `car`
 --
 
@@ -52,6 +28,7 @@ CREATE TABLE `car` (
   `car_platenumber` varchar(10) NOT NULL,
   `car_color` varchar(45) DEFAULT NULL,
   `path` varchar(45) DEFAULT NULL,
+  `car_name` varchar(255) NOT NULL,
   PRIMARY KEY (`car_id`),
   UNIQUE KEY `car_id_UNIQUE` (`car_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
@@ -63,7 +40,7 @@ CREATE TABLE `car` (
 
 LOCK TABLES `car` WRITE;
 /*!40000 ALTER TABLE `car` DISABLE KEYS */;
-INSERT INTO `car` VALUES (1,'sample','abc123','red','default.jpg');
+INSERT INTO `car` VALUES (1,'sample','abc123','red','/static/cars/default.jpg','');
 /*!40000 ALTER TABLE `car` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,7 +58,7 @@ CREATE TABLE `car_reports` (
   `date_report` datetime NOT NULL,
   `report` varchar(256) NOT NULL,
   PRIMARY KEY (`report_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -163,8 +140,9 @@ CREATE TABLE `users` (
   `lastname` varchar(20) NOT NULL,
   `password` varchar(35) NOT NULL,
   `email` varchar(30) NOT NULL,
+  `admin` int(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -173,7 +151,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'ronsarahan','ron','sarahan','123','ron_sarahan@dlsu.edu.ph'),(2,'jw','jj','ww','wow','lol@ph'),(3,'rs','rr','ss','1234','rs@email.com'),(4,'qw','qq','ww','1234','qw@qw');
+INSERT INTO `users` VALUES (1,'ronsarahan','ron','sarahan','hi','ron_sarahan@dlsu.edu.ph',1),(20,'jdoe','John','Doe','1234Qwerty','jdoe@email.com',0),(21,'jCooper','Wooper','Cooper','b70IvLdBGBgnx2SZMm/8Pg==','email@r.com',1),(22,'wakanda','Wanda','Wakanda','9vQlvOrk1eSC7o2Aoz8EjA==','wak@mail.com',0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -186,4 +164,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-10 14:19:42
+-- Dump completed on 2018-03-30 20:11:40

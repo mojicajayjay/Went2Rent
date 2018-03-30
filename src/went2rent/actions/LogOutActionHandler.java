@@ -23,7 +23,7 @@ public class LogOutActionHandler implements ActionHandler {
 		request.getSession().setAttribute("sessionuser", null);
 		request.getSession(false);
 		
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		request.getRequestDispatcher("cata").forward(request, response);
 		
 	}
 
