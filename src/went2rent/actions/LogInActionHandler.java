@@ -1,6 +1,7 @@
 package went2rent.actions;
 
 import java.io.IOException;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,9 +24,8 @@ public class LogInActionHandler implements ActionHandler {
 //		System.out.println(user.getAdmin());
 //		System.out.println(user.getUsername());
 		RequestDispatcher dispatcher = request.getRequestDispatcher("cata");
-		
+		HttpSession session = request.getSession();
 		if(user != null) {
-			HttpSession session = request.getSession();
 			if(user.getAdmin()==1) {
 				System.out.println("Setting true params");
 				session.setAttribute("admin", "tru");
@@ -46,9 +46,37 @@ public class LogInActionHandler implements ActionHandler {
 			
 		}
 		else {
-			dispatcher = request.getRequestDispatcher("login.jsp");
-		}
-		dispatcher.forward(request, response);
-	}
+			int loginAttempt;
+            if (session.getAttribute("loginCount") == null) {
+                session.setAttribute("loginCount", 0);
+                loginAttempt = 0;
+            }
+            else {
+                 loginAttempt = Integer.parseInt(session.getAttribute("loginCount").toString());
+            }
 
+            if (loginAttempt >= 2 ) {        
+                long lastAccessedTime = session.getLastAccessedTime();
+                Date date = new Date();
+                long currentTime = date.getTime();
+                long timeDiff = currentTime - lastAccessedTime;
+             
+                if (timeDiff >= 1200000) {   
+                    session.invalidate();
+                }
+                else {
+                     session.setAttribute("message","You have exceeded the 3 failed login attempt. Please try to log in after 20 minutes.");
+                }  
+
+            }
+            else {
+                 loginAttempt++;
+                 int allowLogin = 3-loginAttempt;
+                 session.setAttribute("message","loginAttempt= "+loginAttempt+". Invalid username or password. You have "+allowLogin+" attempts remaining. Please try again! <br>Not a registered cusomer? Please <a href=\"register.jsp\">register</a>!");
+            }
+            session.setAttribute("loginCount",loginAttempt);
+            dispatcher = request.getRequestDispatcher("login.jsp");
+        }
+			dispatcher.forward(request, response);
+	}
 }
